@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sebaran Gereja di Kota Sukabumi</title>
+
+    <!-- Leaflet & Plugin CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <link href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Header -->
+<header id="navbar">
+    <div class="container">
+        <div class="logo">
+            <img src="asset/logo sukabumi.png" alt="Logo" width="100">
+            <h1>ChurchMap</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero-section">Beranda</a></li>
+                <li><a href="#map-section">Peta</a></li>
+                <li><a href="#data-section">Data</a></li>
+                <li><a href="#author-section">Pembuat</a></li>
+                <li><a href="#footer">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<div id="hero-section" class="hero-section">
+    <div class="hero-content">
+        <h1>WebGIS ₊˚ʚ ⛪ ₊ Sebaran Gereja di Kota Sukabumi ✧ ﾟ.</h1>
+        <p>Menata Ruang Suci : Eksplorasi Tata Letak Lokasi Gereja di Kota Sukabumi</p>
+    </div>
+</div>
+
+<!-- Map Section -->
+<div id="map-section">
+    <h2>JELAJAHI PETA SEBARAN GEREJA NYA YUK!</h2>
+   <div id="mapid" style="height: 400px; position: relative;">
+  <div id="legend" class="legend">
+    <h4>Legenda Denominasi Gereja</h4>
+    <div id="legend-content"></div>
+  </div>
+</div>
+<!-- Data Section -->
+<div id="data-section">
+                    <h2>INFORMASI TERKAIT GEREJA</h2>
+    <div class="container">
+        <div class="column">
+            <div class="data-item">
+                <img src="asset/gereja santo joseph (1).jpg" alt="Gereja 1">
+                <div class="description">
+  <h3>Gereja Katolik Santo Yoseph</h3>
+  <p>Salah satu gereja tertua di Kota Sukabumi yang masih aktif dan memiliki banyak kegiatan komunitas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="data-item">
+                <img src="asset/gereja GKI penginjil.JPG" alt="Gereja 2">
+                <div class="description">
+                    <h3>Gereja Kristen Indonesia</h3>
+                    <p>Gereja Kristen Indonesia yang berada di pusat kota dan menjadi tempat ibadah rutin warga sekitar.</p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="data-item">
+                <img src="asset/hkbp.jpg" alt="Gereja 3">
+                <div class="description">
+                    <h3>Gereja Huria Kristen Batak Protestan </h3>
+                    <p>Gereja Huria Kristen Batak Protestan yang melayani komunitas Batak di wilayah Sukabumi. </p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="data-item">
+                <img src="asset/panteskota.jpg" alt="Gereja 4">
+                <div class="description">
+                    <h3>Gereja Pantekosta</h3>
+                    <p>Gereja Pantekosta di Kota Sukabumi melayani jemaat dari berbagai latar belakang dengan semangat misi dan penginjilan yang kuat.</p>
+                 </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="data-item">
+                <img src="asset/GKP.jpg" alt="Gereja 5">
+                <div class="description">
+                    <h3>Gereja Kristen Pasundan</h3>
+                    <p>Gereja Kristen Pasundan Sukabumi merupakan salah satu jemaat dari Gereja Kristen Pasundan (GKP).</p>
+                      </div>
+                 </div>
+             </div>
+        <div class="column">
+            <div class="data-item">
+                <img src="asset/bethel.jpg" alt="Gereja 6">
+                <div class="description">
+                    <h3>Gereja Bethel Indonesia</h3>
+                    <p>Gereja Bethel Indonesia (GBI) di Kota Sukabumi merupakan bagian dari sinode GBI yang beraliran Pantekosta. </p>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Author Section -->
+<div id="author-section">
+    <div class="author-content">
+        <img src="asset/profile pembuat.jpg" alt="Profile Picture" class="profile-picture">
+        <div class="author-name">
+           </h3> <p class="justify"></p>Proyek ini dikembangkan oleh Tazkia Najwa Kamila, mahasiswa Program Studi Sains Informasi Geografi dari Universitas Pendidikan Indonesia, sebagai bagian dari tugas kuliah dan juga latihan dalam mengaplikasikan ilmu Sistem Informasi Geografis (SIG) dan web development.</p> </h3>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div id="footer">
+    <div class="footer-content">
+        <h3>Hubungi Pemilik</h3>
+        <p>☎ +6285720763020</p>
+        <p>📧 hallokia299@gmail.com.com</p>
+        <p>📍  Jl. Pelabuhan II No. 337, Sukabumi
+    </div>
+</div>
+ </footer>
+ 
+<!-- Leaflet Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+  // Data denominasi (sekarang dengan deskripsi untuk legenda)
+  const denominations = {
+      'Katolik': { color: 'red' },
+      'GKI': { color: 'blue' },
+      'HKBP': { color: 'green'},
+      'Pantekosta': { color: 'yellow' },
+      'Pasundan': { color: 'magenta'},
+      'Bethel': { color: 'deeppink'}
+  };
+
+  // Basemap
+  const baseMaps = {
+      "OpenStreetMap": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }),
+      "Esri Satelit": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+      }),
+      "CartoDB Positron": L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; <a href="https://carto.com/attributions">CartoDB</a>, <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      })
+  };
+
+   // Data gereja (dikerucutkan hanya di wilayah Kota Sukabumi)
+   const churches = [
+        // Gereja Katolik (Merah)
+        { name: 'Gereja Katolik Santo Yoseph', lat: -6.9222, lng: 106.9263, info: 'Jl. Siliwangi, Cikole', denom: 'Katolik' },
+        { name: 'Gereja Katolik St. Theresia', lat: -6.9180, lng: 106.9190, info: 'Jl. Pemuda, Cikole', denom: 'Katolik' },
+        { name: 'Gereja Katolik St. Aloysius', lat: -6.9250, lng: 106.9100, info: 'Jl. Veteran, Gunung Puyuh', denom: 'Katolik' },
+        { name: 'Gereja Katolik St. Fransiskus', lat: -6.9080, lng: 106.9350, info: 'Jl. Ahmad Yani, Warudoyong', denom: 'Katolik' },
+        { name: 'Gereja Katolik St. Agustinus', lat: -6.9300, lng: 106.9280, info: 'Jl. Surya Kencana, Cibeureum', denom: 'Katolik' },
+
+        // GKI (Biru)
+        { name: 'GKI Sukabumi', lat: -6.9245, lng: 106.9300, info: 'Jl. Harun Kabir, Warudoyong', denom: 'GKI' },
+        { name: 'GKI Sukabumi Kota', lat: -6.9150, lng: 106.9280, info: 'Jl. Bhayangkara, Cikole', denom: 'GKI' },
+        { name: 'GKI Selabintana', lat: -6.9000, lng: 106.9300, info: 'Jl. Selabintana, Selabatu', denom: 'GKI' },
+        { name: 'GKI Benteng', lat: -6.9100, lng: 106.9100, info: 'Jl. Benteng, Gunung Puyuh', denom: 'GKI' },
+        { name: 'GKI Cibeureum', lat: -6.9350, lng: 106.9350, info: 'Jl. Raya Cibeureum, Cibeureum', denom: 'GKI' },
+
+        // HKBP (Hijau)
+        { name: 'HKBP Sukabumi', lat: -6.9200, lng: 106.9250, info: 'Jl. Bhayangkara, Cikole', denom: 'HKBP' },
+        { name: 'HKBP Pahlawan', lat: -6.9280, lng: 106.9150, info: 'Jl. Pahlawan, Citamiang', denom: 'HKBP' },
+        { name: 'HKBP Karang Tengah', lat: -6.9050, lng: 106.9400, info: 'Jl. Karang Tengah, Cibereum', denom: 'HKBP' },
+        { name: 'HKBP Kebonjati', lat: -6.9100, lng: 106.9220, info: 'Jl. Kebonjati, Gunung Puyuh', denom: 'HKBP' },
+        { name: 'HKBP Baros', lat: -6.9000, lng: 106.9600, info: 'Jl. Raya Baros, Baros', denom: 'HKBP' },
+
+        // Pantekosta (Kuning)
+        { name: 'Gereja Pantekosta Sukabumi', lat: -6.9285, lng: 106.9340, info: 'Jl. Tipar, Citamiang', denom: 'Pantekosta' },
+        { name: 'GPdI Bhayangkara', lat: -6.9205, lng: 106.9240, info: 'Jl. Bhayangkara, Cikole', denom: 'Pantekosta' },
+        { name: 'GPdI Cikole', lat: -6.9170, lng: 106.9260, info: 'Jl. Cikole, Cikole', denom: 'Pantekosta' },
+        { name: 'GPdI Gunung Puyuh', lat: -6.9120, lng: 106.9080, info: 'Jl. Gunung Puyuh, Gunung Puyuh', denom: 'Pantekosta' },
+        { name: 'GPdI Cimahi', lat: -6.9300, lng: 106.9000, info: 'Jl. Cimahi, Citamiang', denom: 'Pantekosta' },
+
+        // Pasundan (Magenta)
+        { name: 'Gereja Kristen Pasundan Sukabumi', lat: -6.9180, lng: 106.9290, info: 'Jl. Cemerlang, Warudoyong', denom: 'Pasundan' },
+        { name: 'GKP Sriwedari', lat: -6.9050, lng: 106.9200, info: 'Jl. Sriwedari, Gunung Puyuh', denom: 'Pasundan' },
+        { name: 'GKP Baros', lat: -6.9000, lng: 106.9500, info: 'Jl. Raya Baros, Baros', denom: 'Pasundan' },
+        { name: 'GKP Citamiang', lat: -6.9270, lng: 106.9300, info: 'Jl. Citamiang, Citamiang', denom: 'Pasundan' },
+        { name: 'GKP Nanggeleng', lat: -6.9350, lng: 106.9150, info: 'Jl. Nanggeleng, Citamiang', denom: 'Pasundan' },
+
+        // Bethel (Deeppink)
+        { name: 'Gereja Bethel Indonesia Sukabumi', lat: -6.9210, lng: 106.9220, info: 'Jl. Pelabuhan II, Cikole', denom: 'Bethel' },
+        { name: 'GBI Mawar Saron', lat: -6.9190, lng: 106.9270, info: 'Jl. Ahmad Yani, Cikole', denom: 'Bethel' },
+        { name: 'GBI City Center', lat: -6.9230, lng: 106.9210, info: 'Jl. Jend. Sudirman, Cikole', denom: 'Bethel' },
+        { name: 'GBI Karang Tengah', lat: -6.9080, lng: 106.9550, info: 'Jl. Karang Tengah, Cibereum', denom: 'Bethel' },
+        { name: 'GBI Cisuda', lat: -6.9380, lng: 106.9050, info: 'Jl. Cisuda, Citamiang', denom: 'Bethel' }
+    ];
+
+  // Inisialisasi peta
+  const map = L.map('mapid', { // Pastikan ID ini cocok dengan div di HTML
+      center: [-6.9222, 106.9263], // Pusat peta di Sukabumi
+      zoom: 13,
+      layers: [baseMaps["OpenStreetMap"]] // Default basemap
+  });
+
+  // Kontrol pilihan basemap
+  L.control.layers(baseMaps).addTo(map);
+
+  // Tambahkan marker ke peta
+  churches.forEach(gereja => {
+      const denomData = denominations[gereja.denom]; // Ambil warna & deskripsi dari objek denominasi
+
+      // Pastikan denominasi ditemukan, jika tidak, lompat ke marker berikutnya
+      if (!denomData) {
+          console.warn(`Denominasi tidak ditemukan untuk gereja: ${gereja.name} (${gereja.denom})`);
+          return;
+      }
+
+      // Buat custom icon dengan warna berdasarkan denominasi
+      const icon = L.divIcon({
+          className: 'custom-icon',
+          html: `<div style="background-color:${denomData.color};width:20px;height:20px;border-radius:50%;border:2px solid white;box-shadow:0 0 3px rgba(0,0,0,0.5);"></div>`, // Menambahkan sedikit shadow
+          iconSize: [20, 20], // Ukuran ikon div
+          iconAnchor: [10, 10], // Titik jangkar ikon (tengah lingkaran)
+          popupAnchor: [0, -10] // Posisi popup relatif terhadap jangkar
+      });
+
+      L.marker([gereja.lat, gereja.lng], { icon: icon })
+          .addTo(map)
+          .bindPopup(`<b>${gereja.name}</b><br>${gereja.info}<br><i>${gereja.denom}</i>`);
+  });
+
+  // Tampilkan legenda otomatis
+  const legendContainer = document.getElementById('legend-content');
+
+  if (legendContainer) { // Pastikan elemen legenda ada di HTML
+      Object.entries(denominations).forEach(([denom, data]) => {
+          const item = document.createElement('div');
+          item.className = 'legend-item';
+          item.innerHTML = `
+              <div class="legend-color" style="background-color:${data.color}"></div>
+              <div class="legend-label">
+                  <strong>${denom}</strong><br>
+                  ${data.desc ? `<span class="legend-description">${data.desc}</span>` : ''}
+              </div>
+          `;
+          legendContainer.appendChild(item);
+      });
+  } else {
+      console.warn("Elemen dengan id 'legend-content' tidak ditemukan. Legenda tidak dapat ditampilkan.");
+  }
+
+  // Fungsi untuk memfokuskan peta ke lokasi tertentu (opsional, jika Anda ingin menggunakannya)
+  function focusMap(lat, lng, name) {
+      map.setView([lat, lng], 17); // Zoom ke lokasi
+      L.popup()
+          .setLatLng([lat, lng])
+          .setContent(`<b>${name}</b><br>Lokasi ditampilkan.`)
+          .openOn(map);
+  }
+
+  // Menggulir ke peta saat halaman dimuat (jika diperlukan)
+  // const mapElement = document.getElementById("mapid");
+  // if (mapElement) {
+  //     mapElement.scrollIntoView({ behavior: "smooth", block: "start" });
+  // }
+
+  // Memastikan peta merender dengan benar setelah semua elemen dimuat
+  map.invalidateSize();
+    // Tombol Fullscreen
+    const fullscreenControl = L.control({ position: 'topleft' });
+  fullscreenControl.onAdd = function(map) {
+      const div = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+      div.innerHTML = '⛶'; // Ikon fullscreen
+      div.style.backgroundColor = 'white';
+      div.style.width = '30px';
+      div.style.height = '30px';
+      div.style.lineHeight = '30px';
+      div.style.textAlign = 'center';
+      div.style.cursor = 'pointer';
+      div.title = 'Fullscreen';
+
+      div.onclick = function() {
+          const mapContainer = map.getContainer();
+          if (!document.fullscreenElement &&
+              !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+              if (mapContainer.requestFullscreen) { mapContainer.requestFullscreen(); }
+              else if (mapContainer.mozRequestFullScreen) { mapContainer.mozRequestFullScreen(); }
+              else if (mapContainer.webkitRequestFullscreen) { mapContainer.webkitRequestFullscreen(); }
+              else if (mapContainer.msRequestFullscreen) { mapContainer.msRequestFullscreen(); }
+          } else {
+              if (document.exitFullscreen) { document.exitFullscreen(); }
+              else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); }
+              else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
+              else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+          }
+      };
+      return div;
+  };
+  fullscreenControl.addTo(map);
+
+</script>
+
+ 
