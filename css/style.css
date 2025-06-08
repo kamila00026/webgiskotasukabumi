@@ -1,0 +1,326 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; p, .description p {
+    text-align: justify;
+    background: linear-gradient(120deg, #cedcff00 0%, #c8dcfb00 80%);
+    color: #1d3152;
+    line-height: 1.6;
+}
+
+/* Navbar */
+#navbar {
+    background: #d1e3ff;
+    color: rgb(49, 64, 107);
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 10px rgb(39, 47, 98);
+    position: sticky;
+    top: 0;
+    z-index: 1500;
+}
+
+#navbar .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: rgb(38, 43, 80);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff0772;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('../asset/gereja1.jpg') center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(248, 255, 214, 0);
+}
+
+.hero-content {
+    position: relative;
+    color: #fffff9;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    background-color: rgb(212, 233, 255);
+    padding: 3rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(190, 202, 255, 0.728);
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-section {
+  background-color: #ffffcf;
+}
+
+/* Map Section */
+#map-section {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #fffbc300;
+}
+
+#map {
+    width: 100%;
+    height: 900px;
+    border-radius: 16px;
+    margin-top: 1rem;
+    box-shadow: 0 2px 20px rgb(225, 234, 255);
+}
+
+/* Data Section */
+#data-section {
+    padding: 3rem 1rem;
+    background: #fff;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 340px;
+}
+
+.data-item {
+    background: rgba(255, 238, 152, 0.498);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(223, 231, 255, 0.954);
+    transition: transform 0.3s ease;
+}
+
+.data-item:hover {
+    transform: translateY(-5px);
+}
+
+.data-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+p, .description p {
+  text-align: justify;
+  line-height: 1.8;
+  text-justify: inter-word;
+}
+    padding: 1.2rem;
+}
+
+.description h3 {
+    color: #242656;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+#data-section {
+  padding: 3rem 1rem;
+  background: #fffef6;
+  text-align: center;
+}
+
+#data-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #271c46;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.column {
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
+}
+
+.data-item {
+  background: #fff9c4;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.data-item:hover {
+  transform: translateY(-5px);
+}
+
+.data-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.description {
+  padding: 1.2rem 1rem;
+  text-align: justify;
+  flex-grow: 1;
+}
+
+.description h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  color: #1b174e;
+  font-weight: bold;
+  text-align: center;
+}
+
+.description p {
+  font-size: 0.85rem;
+  color: #200b4d;
+  line-height: 1.6;
+}
+
+/* Author Section */
+#author-section {
+  padding: 0.5rem 0.5rem;
+  background: linear-gradient(125deg, #f2f2f5, #ebebef);
+  /* text-align: justify; <-- Hapus atau biarkan di sini jika ingin teks di dalam section juga justify */
+  display: flex; /* Tambahkan flexbox untuk memusatkan konten secara horizontal */
+  flex-direction: column; /* Susun item secara vertikal */
+  align-items: center; /* Pusatkan item secara horizontal */
+  text-align: justify; /* Tetap justify untuk teks di dalam section */
+}
+
+.author-content {
+  max-width: 900px;
+  /* margin: center; <-- Ini salah. Ganti dengan margin: 0 auto; */
+  margin: 0 auto; /* Pusatkan elemen block secara horizontal */
+  padding: 20px; /* Tambahkan padding agar konten tidak terlalu menempel tepi */
+  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+  /* text-align: justify; <-- Pindahkan atau duplikasi jika hanya konten ini yang justify */
+}
+
+.profile-picture {
+  width: 115px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 60%;
+  /* margin: 1rem 0; <-- Ini akan memengaruhi penempatan horizontal jika display:block */
+  /* Untuk memusatkan gambar dalam .author-content jika .author-content tidak flex: */
+  display: block; /* Pastikan gambar adalah elemen block */
+  margin: 1rem auto; /* Pusatkan gambar secara horizontal */
+  border: 6px solid #c41866;
+  box-shadow: 0 0 12px rgba(241, 217, 217, 0.897);
+}
+
+.author-name {
+  text-align: center; /* Pusatkan nama author */
+}
+
+.author-name h3 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Jika Anda memiliki paragraf atau elemen teks di dalam .author-content yang ingin di-justify,
+ pastikan itu diterapkan pada elemen teks tersebut atau pada .author-content itu sendiri. */
+.author-content p {
+  text-align: justify;
+  line-height: 1.6; /* Tambahkan line-height agar teks justify terlihat lebih rapi */
+}
+/* Footer */
+#footer {
+    background: #dbecff;
+    color: rgb(36, 45, 95);
+    padding: 1rem;
+    text-align: left;
+}
+
+#footer p {
+    margin: 0.2rem 0;
+}
+   .legend {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  background: rgba(255, 255, 199, 0.95);
+  padding: 0.3rem;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 2px 12px rgb(218, 243, 255);
+  max-width: 250px;
+}
+.legend h4 {
+  margin-top: 0;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  border-radius: 50%;
+  border: 1px solid #162554;
+}
